@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://henok123:henok123@cluster0-iqo6z.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://henok123:henok123@cluster0-4zwea.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "mysecrettoken"
 }
