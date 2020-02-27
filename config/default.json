@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://henok123:henok123@cluster0-4zwea.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb://henok123:henok123@cluster0-shard-00-00-dgfed.mongodb.net:27017,cluster0-shard-00-01-dgfed.mongodb.net:27017,cluster0-shard-00-02-dgfed.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
   "jwtSecret": "mysecrettoken"
 }

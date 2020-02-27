@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../../routes/api/middleware/auth");
-const Profile = require("../../routes/api/modules/Profile");
-const User = require("../../routes/api/modules/User");
+const auth = require("./middleware/auth");
+const Profile = require("./models/Profile");
+const User = require("./models/User");
 const { check, validationResult } = require("express-validator");
 //@route   GET api/profile/me
 //@desc    Get current users profile
 //@access  Private
-router.get("/", auth, async (req, res) => {
+router.get("/me", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.user.id
