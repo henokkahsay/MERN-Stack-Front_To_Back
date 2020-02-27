@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require("./middleware/auth");
 const Profile = require("./models/Profile");
 const User = require("./models/User");
-const { check, validationResult } = require("express-validator");
+const { check, validationResult } = require("express-validator/check");
 //@route   GET api/profile/me
 //@desc    Get current users profile
 //@access  Private
@@ -59,15 +59,16 @@ router.post(
     // Bulid profile object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (compnay) profileFields.company = company;
+    if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
     if (skills) {
-      profileFields.skills = skills.split(",").map(skill => skills.trim());
+      profileFields.skills = skills.split(",").map(skill => skill.trim());
     }
+
     //Bulid social object
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
