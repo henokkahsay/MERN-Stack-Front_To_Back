@@ -115,12 +115,12 @@ router.get("/", async (req, res) => {
 //@access  public
 router.get("/user/:user_id", async (req, res) => {
   try {
-    const profiles = await Profile.find({
+    const profile = await Profile.findOne({
       user: req.params.user_id
     }).populate("user", ["name", "avatar"]);
     if (!profile) return res.status(400).json({ msg: "Profile not found" });
 
-    res.json(profiles);
+    res.json(profile);
   } catch (err) {
     console.error(err.message);
     if (err.kind == "ObjectId") {
@@ -162,7 +162,7 @@ router.put(
       check("company", "company is required")
         .not()
         .isEmpty(),
-      check("]from", "From date is required")
+      check("from", "From date is required")
         .not()
         .isEmpty()
     ]
