@@ -12,7 +12,7 @@ test:{
 
 },
 name:{
-    type:String
+    type:string
 },
 avatar:{
     type:String
