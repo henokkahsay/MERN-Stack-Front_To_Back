@@ -6,13 +6,13 @@ const PostSchema=new Schema({
         type:Schema.Types.ObjectId,
         ref:'users'
     },
-test:{
+text:{
     type:String,
     required:true
 
 },
 name:{
-    type:string
+    type:String
 },
 avatar:{
     type:String
@@ -20,7 +20,7 @@ avatar:{
 likes:[
     {
         user:{
-            typeL=Schema.Types.ObjectId,
+            type:Schema.Types.ObjectId,
             ref:'users'
         }
     }
@@ -28,7 +28,7 @@ likes:[
 comments:[
     {
     user:{
-        typeL=Schema.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:'users'
     },
     text:{
