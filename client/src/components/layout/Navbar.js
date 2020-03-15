@@ -31,8 +31,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <nav className="navbar bg-dark">
       <h1>
-        <Link to="/.html">
-          <i className="fas fa-code"></i> DevConnector
+        <Link to="/">
+          <i className="fas fa-code" /> DevConnector
         </Link>
       </h1>
       {!loading && (
@@ -41,7 +41,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </nav>
   );
 };
-Navbar.propType = {
+Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.func.isRequired
 };
